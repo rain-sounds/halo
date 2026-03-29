@@ -8,13 +8,13 @@ spring:
     ansi:
       enabled: detect
   r2dbc:
-    url: r2dbc:h2:file:///${halo.work-dir}/db/halo-next?MODE=MySQL&DB_CLOSE_ON_EXIT=FALSE
-    username: admin
-    password: 123456
+    url: r2dbc:pool:mysql://localhost:3306/halo
+    username: root
+    password: "4g^7W*fZ1mP5@k"
   sql:
     init:
       mode: always
-      platform: h2
+      platform: mysql
   http:
     codecs:
       max-in-memory-size: 10MB
@@ -38,8 +38,12 @@ spring:
   threads:
     virtual:
       enabled: true
-
 halo:
+  plugin:
+    runtime-mode: development
+    fixed-plugin-path:
+      # 配置为插件项目目录绝对路径
+      - D:\projects\halo\plugin-journal
   work-dir: ${user.home}/.halo2
   attachment:
     resource-mappings:

@@ -1,0 +1,22 @@
+# Refer https://docs.halo.run/developer-guide/plugin/basics/manifest
+
+apiVersion: plugin.halo.run/v1alpha1
+kind: Plugin
+metadata:
+  # The name defines how the plugin is invoked, A unique name
+  name: journal
+spec:
+  enabled: true
+  requires: ">=2.23.0"
+  author:
+    name: lee
+    website: https://github.com/lee
+  logo: logo.png
+  homepage: https://github.com/lee/journal#readme
+  repo: https://github.com/lee/journal
+  issues: https://github.com/lee/journal/issues
+  displayName: "journal"
+  description: "journal - Halo 插件"
+  license:
+    - name: "GPL-3.0"
+      url: "https://github.com/lee/journal/blob/main/LICENSE"
